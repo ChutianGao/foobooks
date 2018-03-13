@@ -14,3 +14,18 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/books', 'BookController@index');
+
+Route::get('/books/{title}', 'BookController@show');
+
+Route::get('/secret/{password}', 'BookController@getHash');
+
+Route::get('/timezone/', function () {
+    return config('app.timezone');
+});
+
+/**
+ * Practice
+ */
+Route::any('/practice/{n?}', 'PracticeController@index');
