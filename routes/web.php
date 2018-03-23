@@ -17,9 +17,9 @@ Route::get('/', function () {
 
 Route::get('/books', 'BookController@index');
 
+Route::get('/books/search', 'BookController@search');
 Route::get('/books/{title}', 'BookController@show');
 
-Route::get('/secret/{password}', 'BookController@getHash');
 
 Route::get('/timezone/', function () {
     return config('app.timezone');
